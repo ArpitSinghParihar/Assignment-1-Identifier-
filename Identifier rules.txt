@@ -1,0 +1,9 @@
+List of Valid and invalid identifier :-
+Valid identifier :
+	maharana_pratap    singh_saheb     parihar@        _temp_var     python_program
+	thakur123          _kunwar_        _mihir_bhoj     arpitSingh    _Rajesh_sir
+
+Invalid identifier :
+        
+	12maharana_pratap    $singh_saheb     @parihar        class     python program
+	thakur$123           invalid        _mihir bhoj     123arpitSingh    $Rajesh_sir	 
