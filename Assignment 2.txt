@@ -1,0 +1,153 @@
+TASK 1 : # Create two variables a and b and assign them both the value 100. Print the memory address of both the variables. Compare the memory addresses of a and b and determine whether they are same or different.
+
+a=100
+b=100
+print("Address of b -",id(b))
+print("Address of a -",id(a))
+
+	ON CONSOLE : Address of b - 140732211861016
+                     Address of a - 140732211861016
+
+TASK 2 :#Assign a string value "hello" to two variables x and y. Use the id() function to check and print their memory addresses. Explain whether the addresses are the same or different and why.
+
+a="Hello"
+b="Hello"
+print("Address of b -",id(b))
+print("Address of a -",id(a))
+	
+	ON CONSOLE :Address of b - 2273571017648
+                    Address of a - 2273571017648
+Explanation : The memory adddress of both the variables are same because Python only stores the value of variable. In our case the values of both the variables are same so pyhton treat it as one.
+
+TASK 3 :#Write a Python program where two variables num1 and num2 are assigned the value 3000. Print their id() values. Based on the result, explain how Python handles memory for large integers in this case.
+num1=3000
+num2=3000
+print("Address of num1 -",id(num1))
+print("Address of num2 -",id(num2))
+print (num1 is num2)
+
+	ON CONSOLE : Address of num1 - 2386508030128
+		     Address of num2 - 2386508030128
+		     True
+Explanation : In my case, The memory allocation are same but Python creates separate objects in memory for the long integers.
+
+TASK 4 :#Create two variables var1 and var2 that are assigned the same list [1, 2, 3]. Compare the memory addresses using the id() function and explain whether they point to the same memory address. If they are different, explain why.
+
+var1 =[1,2,3]
+var2 =[1,2,3]
+print("Address of var1 -",id(var1))
+print("Address of var2 -",id(var2))
+print(num1 is num2)
+
+	ON CONSOLE : Address of var1 - 1748476238080
+		     Address of var2 - 1748476236160
+		     False
+Explanation : Python creates two separate list objects in memory when we create the list, even though their contents are the same.
+
+TASK 5 : #Create a Python function check_memory(a, b) that takes two arguments and compares their memory addresses using the id() function. The function should print True if both variables share the same memory address and False otherwise. Call this function with two variables having the same value.
+
+def check_memory(a,b):
+                print("Address of a -",id(a))
+                print("Address of b -",id(b))
+                print(a is b)
+
+check_memory(30,30)
+
+	ON CONSOLE : Address of a - 140732166311256
+		     Address of b - 140732166311256
+		     True
+
+TASK 6 is similar to TASK 3 so i dont need to repeat the same...
+
+TASK 7 :#Write a Python program that assigns a tuple (1, 2, 3) to two variables t1 and t2. Use the id() function to check if both variables point to the same memory location. Modify one of the variables by adding an element to the tuple and check whether the memory address changes.
+Answer : when we assign the same value to tuple then it allocate the same memory but when we modify the one of the variable, the changes will be seen in the memory allocation.
+
+TASK 8 : #Create two variables, a = 50 and b = 50, and assign the same value to them. Use the is operator to check if they refer to the same object in memory. Print the result and explain the concept behind how Python handles small integers and memory.
+Answer : I already use "is" operator for comparing the two variable in the previous task 5 and in this task it gives TRUE because for small integers python share the same memory allocation....
+
+TASK 9 : #Assign the value "Python" to two variables str1 and str2. Print the memory addresses of both variables using the id() function. Modify one variable by concatenating " Programming" to it. Check and print if the memory addresses have changed.
+str1 = "Python" +"Programming"
+str2 = "Python"
+print("The address of str1 is :",id(str1))
+print("The address of str2 is :",id(str2))
+print(str1 is str2)
+	
+	ON CONSOLE : The address of str1 is : 2753423425456
+		     The address of str2 is : 140732106019088
+                     False
+
+TASK 10 : #Create two variables var_a and var_b that hold the same value, e.g., True. Compare their memory addresses using the id() function. Next, assign new values to var_a and var_b and compare the addresses again. Explain what changes and why it happens when you assign new values
+Answer : I already explained this concept in the above tasks...
+
+TASK 11 : # Find the size and type of a variable
+# Create a variable x and assign it a value of 10. Use the type() function to print the type of the variable. Use the sys.getsizeof() function from the sys module to find and print the size of the variable x in bytes. Explain what you observe about the size of the variable.
+import sys
+x=10
+print("Type of a is :",type(x))
+print("The size of the a is :",sys.getsizeof(x),"Bytes")
+		
+	ON CONSOLE : Type of a is : <class 'int'>
+		     The size of the a is : 28 Bytes
+
+TASK 12 : Use the sys.getsizeof() function to print the sizes of these three variables. Also, print the type of each variable using the type() function. Compare the results and explain the difference in memory usage among the variables.
+import sys
+a = 100
+b = "hello"
+c = [1, 2, 3, 4]
+print("The type of a is :",type(a))
+print("The size of a is :",sys.getsizeof(a))
+print("The type of b is :",type(b))
+print("The size of b is :",sys.getsizeof(b))
+print("The type of c is :",type(c))
+print("The size of c is :",sys.getsizeof(c))
+
+	ON CONSOLE : The type of a is : <class 'int'>
+		The size of a is : 28
+		The type of b is : <class 'str'> 
+		The size of b is : 46
+		The type of c is : <class 'list'>
+		The size of c is : 88
+
+TASK 13 : Create a variable f = 3.14159 and use the type() function to print its type. Then, use sys.getsizeof() to find the size of the float variable. Afterward, experiment by assigning larger float numbers (like f = 1.234567890123456789) and check if the size changes. Explain why the size of floats may vary.
+import sys
+f = 1.234567890123456789
+print("The type of f is :",type(f))
+print("The size of f is",sys.getsizeof(f),"Bytes")
+
+	ON CONSOLE : The type of f is : <class 'float'>
+		     The size of f is 24 Bytes
+Explanation :The size of the float value is fixed in python because Python's float type is implemented as a C double 
+
+TASK 14 :#Check the size of an empty and a non-empty list
+# Create two variables:
+# list1 = [] (an empty list)
+# list2 = [1, 2, 3, 4] (a non-empty list)
+# Use the sys.getsizeof() function to print the sizes of both lists and also use the type() function to check the type of each list. Explain why the size of the empty list and non-empty list is different.
+import sys
+list1 = [] 
+list2 = [1, 2, 3, 4] 
+print("The type of the list1 is :",type(list1))
+print("The size of the list1 is :",sys.getsizeof(list1))
+print("The type of the list2 is :",type(list2))
+print("The size of the list2 is :",sys.getsizeof(list2))
+
+	ON CONSOLE : The type of the list1 is : <class 'list'>
+		The size of the list1 is : 56
+		The type of the list2 is : <class 'list'>
+		The size of the list2 is : 88
+Explanation : The size of the non-empty list is larger than the empty list because it store the reference of its elements.
+
+TAKS 15 :#Find the size of a large string and its type
+# Create a variable long_string and assign it a long string value, such as "Python is awesome!" * 1000. Use the type() function to print the type of the variable and the sys.getsizeof() function to check how much memory this string consumes. Compare its size to a smaller string and explain how Python handles memory for strings.
+import sys
+small_string = "Python is awesome!"
+print("Type of the small_string is :",type(small_string))
+print("THe size of the small_string is :",sys.getsizeof(small_string))
+long_string = "Python is awesome!"*1000
+print("Type of the long_string is :",type(long_string))
+print("THe size of the long_string is :",sys.getsizeof(long_string))
+
+	ON CONSOLE :Type of the small_string is : <class 'str'>
+		THe size of the small_string is : 59
+		Type of the long_string is : <class 'str'>
+		THe size of the long_string is : 18041
